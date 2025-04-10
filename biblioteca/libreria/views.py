@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from libreria.models import Autor, Libro, Resena
 from rest_framework.views import APIView
-from libreria.serializers import AutoresSerializer, LibrosSerializer, ResenaSerializer
+from libreria.serializers import AutoresSerializer, LibrosSerializer, ResenaSerializer, LibroYResenaSerializer
 from rest_framework.response import Response
 
 # Create your views here.
@@ -46,3 +46,10 @@ class ResenaListAV(APIView):
             serializer.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+    
+class LibroYResenaListAV(APIView):
+    def get(self, request):
+        libro = Libro.objects.all()
+        serializer = LibroYResenaSerializer(libro, many= True)
+        return Response(serializer.data, status=201)
+        

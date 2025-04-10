@@ -19,3 +19,11 @@ class ResenaSerializer(serializers.ModelSerializer):
         model = Resena
         fields = '__all__'
         
+class LibroYResenaSerializer(serializers.ModelSerializer):
+    resenas = ResenaSerializer(many=True, read_only=True, source='resena_set')
+    autores = serializers.StringRelatedField()
+    
+    class Meta:
+        model = Libro
+        fields = ['id', 'titulo', 'autores', 'fecha_publicacion', 'resumen', 'resenas']
+    
