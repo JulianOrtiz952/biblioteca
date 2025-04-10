@@ -19,7 +19,7 @@ Este proyecto es una API REST desarrollada con Django y Django REST Framework. P
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu_usuario/biblioteca.git
+git clone https://github.com/JulianOrtiz952/biblioteca.git
 cd biblioteca
 
 🚀Crear_Activar_Entorno_Virtual
