@@ -44,6 +44,8 @@ python manage.py createsuperuser
 python manage.py runserver
 
 🚀ENDPOINTS
+ENDPOINT BASE
+http://127.0.0.1:8000/autores/
 
 Método	Endpoint	                Descripción
 GET 	/autores/	                 Listar todos los autores
